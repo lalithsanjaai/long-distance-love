@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   
 </head>
-<body>
+<body i="mainBody">
   <div class="card">
     <p class="line1">When Love is true</p>
 
@@ -48,6 +48,21 @@
       // Append to body
       document.body.appendChild(confetti);
     }
+    const body = document.getElementById("mainBody");
+
+  const bgColors = [
+    "radial-gradient(circle at center, #ffe6f0, #ffccd5, #ffb3c6)",
+    "radial-gradient(circle at center, #d1eef0, #95d2f3, #78c4fb)",
+    "radial-gradient(circle at center, #e0f7fa, #80deea, #26c6da)",
+    "radial-gradient(circle at center, #fce4ec, #f8bbd0, #f48fb1)"
+  ];
+
+  let index = 0;
+
+  body.addEventListener("click", () => {
+    index = (index + 1) % bgColors.length;
+    body.style.background = bgColors[index];
+  });
   </script>
 
 </body>
