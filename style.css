@@ -1,0 +1,372 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: 
+    rgb(166, 214, 214);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+  
+  .card {
+    border: 2px dashed black;
+    border-radius: 12px;
+    padding: 20px;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: white;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    background: rgb(247, 207, 216);
+
+
+
+   
+  }
+  
+  .line1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .line1:hover {
+    color:white;
+   
+    font-size: 25px;
+    transition: all 0.3s ease;
+    transform: scale3d(1.1, 1.1, 1.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
+    
+  }
+  .line2 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .line2:hover {
+    color: white;
+   
+    font-size: 25px;
+    transition: all 0.3s ease;
+    transform: scale3d(1.1, 1.1, 1.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
+
+  }
+  .line1, .line2 {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  }
+  
+  .emoji {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .emoji:hover {
+    font: 1em sans-serif;
+    font-size: 25px;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: rgb(244, 248, 211);
+  }
+  .location-label {
+    position: absolute;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .location-label.left {
+    left: 10px;  
+    top: 110px;   
+  }
+  
+  .location-label.right {
+    right: 10px;
+    top: 110px;
+  }
+  .location-label:hover {
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    transform: scale(1.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
+  }
+  
+  
+  .line-art {
+    position: relative;
+    width: 100%;
+    height: 130px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+  }
+  
+  .svg-curve {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .heart-shape {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+   
+    
+  }
+  .heart-shape path {
+    fill: red;
+    stroke: black;
+    stroke-dasharray: 4, 4;
+    stroke-width: 2;
+    transition: all 0.3s ease;
+  }
+  
+  .heart-shape path:hover {
+    fill: #ff4d4d; 
+    stroke: #660000;
+    transform: scale(1.2); 
+  }
+  
+  
+  
+  .pin {
+    width: 16px;
+    height: 22px;
+    background: black;
+    border-radius: 50% 50% 50% 0;
+    position: absolute;
+    top: 92px;
+    transform: rotate(-45deg);
+  }
+ .pin:hover {
+    background: rgb(166, 214, 214);
+    transform: rotate(-45deg) scale(1.2);
+    transition: all 0.3s ease;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 50% 50% 50% 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+
+  }
+  .pin::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: -3px;
+    left: 7px;
+  }
+  
+  .pin::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+  }
+  
+  .left {
+    left: 0;
+  }
+  
+  .right {
+    right: 0;
+  }
+  
+  .line2 {
+    font-size: 18px;
+    margin-top: 15px;
+    line-height: 1.4;
+  }
+  
+  /* Responsive */
+  @media (max-width: 400px) {
+    .card {
+      width: 90%;
+    }
+  
+    .line1 {
+      font-size: 18px;
+    }
+  
+    .line2 {
+      font-size: 16px;
+    }
+  
+    .heart-shape {
+      width: 50px;
+      height: 50px;
+      top: 12px;
+    }
+  }
+  @keyframes pulse {
+    0%, 100% {
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      transform: translateX(-50%) scale(1.2);
+    }
+  }
+  
+  .heart-shape {
+    animation: pulse 2s infinite ease-in-out;
+  }
+  @keyframes bounce {
+    0%, 100% {
+      top: 92px;
+    }
+    50% {
+      top: 88px;
+    }
+  }
+  
+  .pin {
+    animation: bounce 2s infinite ease-in-out;
+  }
+  .svg-curve path {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: draw-line 3s ease forwards;
+  }
+  
+  @keyframes draw-line {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  .line1, .line2 {
+    opacity: 0;
+    animation: fade-in 2s ease forwards;
+  }
+  
+  .line2 {
+    animation-delay: 1s;
+  }
+  
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+    body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at center, #ffe6f0, #ffccd5, #ffb3c6);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: popBackground 8s ease-in-out infinite alternate;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  @keyframes popBackground {
+    0% {
+      background: radial-gradient(circle at center, #d1eef0, #95d2f3, #78c4fb);
+    }
+    50% {
+      background: radial-gradient(circle at center,  #d1eef0, #95d2f3, #78c4fb);
+    }
+    100% {
+      background: radial-gradient(circle at center, #d1eef0, #95d2f3, #78c4fb);
+    }
+  }
+  .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      opacity: 0.8;
+      animation: fall 5s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }  
+    @media (max-width: 600px) {
+  .card {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .line1, .line2 {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  .emoji {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .heart-shape {
+    width: 60px;
+    height: 60px;
+    top: 0;
+  }
+
+  .location-label {
+    font-size: 14px;
+  }
+
+  .location-label.left, .location-label.right {
+    top: 90px;
+  }
+
+  .pin {
+    width: 12px;
+    height: 18px;
+    top: 80px;
+  }
+
+  .pin::before,
+  .pin::after {
+    width: 4px;
+    height: 4px;
+    top: 5px;
+    left: 4px;
+  }
+
+  .svg-curve {
+    height: 80px;
+  }
+
+  .line-art {
+    height: 100px;
+  }
+
+  .confetti {
+    width: 6px;
+    height: 6px;
+  }
+}

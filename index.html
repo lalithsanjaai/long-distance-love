@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Quote</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div class="card">
+    <p class="line1">When Love is true</p>
+
+    <div class="line-art">
+      <div class="pin left"></div>
+      <div class="location-label left">Salem</div>
+
+      <svg viewBox="0 0 300 120" class="svg-curve">
+        <!-- Dotted curved line -->
+        <path d="M10,100 Q150,-20 290,100" stroke="#000" stroke-dasharray="5,5" fill="none" stroke-width="2"/>
+      </svg>
+
+      <!-- Enlarged heart above the curve -->
+      <svg viewBox="0 0 100 100" class="heart-shape">
+        <path d="M50,40 
+                 Q40,10 20,40 
+                 Q50,80 80,40 
+                 Q60,10 50,40 Z" 
+              stroke="#000" stroke-dasharray="4,4" fill="none" stroke-width="2"/>
+      </svg>
+
+      <div class="pin right"></div>
+      <div class="location-label right">Chennai</div>
+    </div>
+    <h2 class="emoji">~🌙🤍</h2>
+    <p class="line2">distance doesn't<br>matter</p>
+  </div>
+   <script>
+    for (let i = 0; i < 100; i++) {
+      let confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+
+      // Random position
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+
+      // Append to body
+      document.body.appendChild(confetti);
+    }
+  </script>
+
+</body>
+</html>
